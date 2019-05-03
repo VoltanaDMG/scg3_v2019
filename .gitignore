@@ -10,3 +10,8 @@
 /build-output
 /cmake-build-debug
 /.idea
+<<<<<<< Updated upstream
+/.vs/scg3/v16
+=======
+>>>>>>> Stashed changes
+/.vs

@@ -29,6 +29,8 @@
 #include "ShaderCoreFactory.h"
 #include "Traverser.h"
 
+#include <algorithm>
+
 namespace scg {
 
 
@@ -128,7 +130,7 @@ Camera* Camera::scale(glm::vec3 scaling) {
 
 
 Camera* Camera::dolly(GLfloat distance) {
-  centerDist_ = std::max(0.f, centerDist_ - distance);
+  centerDist_ = (std::max)(0.f, centerDist_ - distance);
   eyePt_ = centerPt_ - centerDist_ * viewDir_;
   update_();
   return this;

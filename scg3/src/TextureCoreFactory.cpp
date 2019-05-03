@@ -25,6 +25,8 @@
 #include <stdexcept>
 #include "BumpMapCore.h"
 #include "CubeMapCore.h"
+
+#define STB_IMAGE_IMPLEMENTATION
 #include "scg_stb_image.h"
 #include "scg_utilities.h"
 #include "Texture2DCore.h"

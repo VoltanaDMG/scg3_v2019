@@ -605,9 +605,6 @@
     <ClCompile Include="src\Viewer.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
-    <ClCompile Include="extern\stb_image\stb_image.c">
-      <Filter>Quelldateien</Filter>
-    </ClCompile>
     <ClCompile Include="src\CameraController.cpp">
       <Filter>Quelldateien</Filter>
     </ClCompile>
