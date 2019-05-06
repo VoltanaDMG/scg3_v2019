@@ -1,5 +1,12 @@
-scg3
-====
+<p align="center">
+  <a href="https://vahlers.github.io/scg3">
+    <img
+      alt="scg3"
+      src="scg3/doc/hsh-logo-2013-small.png"
+      width="auto"
+    />
+  </a>
+</p>
 
 An extensible OpenGL 3 / C++11 scene graph library for teaching computer graphics along the programmable pipeline.
 
@@ -8,9 +15,12 @@ _(C) 2014-2019 Volker Ahlers_
 <br>
 
 ## Table of Contents
-**[1]** Prerequisites<br>
-**[2]** Environment set up<br>
-**[3]** Compiling _scg3_ / _scg3_v2019_
+
+* [Prerequisites](#prerequisites)<br>
+* [Environment set up](#environment-set-up)<br>
+* [Building scg3](#building-scg3)
+  * [Projects](#projects)
+  * [Building using CMake on Linux](#building-using-cmake-on-linux)
 
 <br>
 
@@ -36,7 +46,7 @@ $ git clone https://github.com/vahlers/scg3.git
 
 <br>
 
-## __Compiling _scg3_ / _scg3_v2019___
+## __Building scg3__
 
 To compile `scg3` or `scg3_v2019` use Eclipse or Visual Studio, cf. documentation in [scg3/scg3.h](https://github.com/vahlers/scg3/blob/master/scg3/scg3.h). In our development team we are working with Visual Studio 2019 to allow parallelized compiles of the library.
 
