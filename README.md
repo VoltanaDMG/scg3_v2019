@@ -9,6 +9,7 @@
 </p>
 
 An extensible OpenGL 3 / C++11 scene graph library for teaching computer graphics along the programmable pipeline.
+**This project is bound by a [Code of Conduct][].**
 
 _(C) 2014-2019 Volker Ahlers_
 
@@ -71,3 +72,5 @@ $ make install -j8   # replace 8 with CPU core count
 In case you want to install the `scg3` library globally into your system, use `cmake -DCMAKE_INSTALL_PREFIX=/usr ..` and `sudo make install -jX` instead.
 Uninstallation can be done using `sudo make uninstall`.
 
+
+[Code of Conduct]: https://github.com/VoltanaDMG/scg3_v2019/blob/master/CODE_OF_CONDUCT.md
