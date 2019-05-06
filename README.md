@@ -22,6 +22,7 @@ _(C) 2014-2019 Volker Ahlers_
 * [Building scg3](#building-scg3)
   * [Projects](#projects)
   * [Building using CMake on Linux](#building-using-cmake-on-linux)
+* [Release types](#release-types)
 
 <br>
 
@@ -71,6 +72,28 @@ $ make install -j8   # replace 8 with CPU core count
 
 In case you want to install the `scg3` library globally into your system, use `cmake -DCMAKE_INSTALL_PREFIX=/usr ..` and `sudo make install -jX` instead.
 Uninstallation can be done using `sudo make uninstall`.
+
+<br>
+
+## Release Types
+
+* **Current**: Under active development. Code for the Current release is in the
+  branch for its major version number (for example,
+  [v2019.x](https://github.com/VoltanaDMG/scg3_v2019/tree/v2019.x)). Node.js releases a new
+  major version every 6 months, allowing for breaking changes. This happens in
+  April and October every year. Releases appearing each October have a support
+  life of 8 months. Releases appearing each April convert to LTS (see below)
+  each October.
+* **LTS**: Releases that receive Long-term Support, with a focus on stability
+  and security. Every even-numbered major version will become an LTS release.
+  LTS releases receive 18 months of _Active LTS_ support and a further 12 months
+  of _Maintenance_. LTS release lines have alphabetically-ordered codenames,
+  beginning with `v2019.x-alpha`. There are no breaking changes or feature additions,
+  except in some special circumstances.
+* **Nightly**: Code from the Current branch built every 24-hours when there are
+  changes. Use with caution.
+
+Current, LTS and Nightly releases follow the syntax `v[YYYY].[Version Nr]-[Channel/Type].(Patch Nr)`
 
 
 [Code of Conduct]: https://github.com/VoltanaDMG/scg3_v2019/blob/master/CODE_OF_CONDUCT.md
