@@ -14,17 +14,10 @@ pull_requests:
   # Do not increment build number for pull requests
   do_not_increment_build_number: true
 
-before_build:
-  # Lookup OpenGL at AppVeyor's VM
-  - cd C:\Windows\System32
-  - dir /s *opengl*
-  - cd C:\projects\scg3_v2019
-
 build_script:
+  - ps: cd scg3
+  - ps: msbuild scg3_vc11.vcxproj /p:configuration=release /p:platform=x64
   - ps: dir
-  #- ps: cd scg3
-  #- ps: msbuild scg3_vc11.vcxproj /p:configuration=release /p:platform=x64
-  #- ps: dir
   
 # We don't have any tests for the scg3 library
 test: off
