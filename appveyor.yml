@@ -1,0 +1,18 @@
+# AppVeyor documentation https://www.appveyor.com/docs
+
+version: '{build}'
+
+image:
+  - Visual Studio 2019 Preview
+
+install:
+  # Download/Install OpenGL & GLFW
+  - "git clone --depth 1 git://github.com/VoltanaDMG/gl-ci-helpers.git"
+  - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
+
+pull_requests:
+  # Do not increment build number for pull requests
+  do_not_increment_build_number: true
+  
+# We don't have any tests for the scg3 library
+test: off
