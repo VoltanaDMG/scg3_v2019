@@ -15,9 +15,12 @@ pull_requests:
   do_not_increment_build_number: true
   
 build_script:
-  - ps: cd scg3
-  - ps: msbuild scg3_vc11.vcxproj /p:configuration=release /p:platform=x64
-  - ps: dir
+  - ps: cd C:\Windows\System32
+  - ps: dir /s opengl*
+  - ps: cd %HOMEPATH%
+  #- ps: cd scg3
+  #- ps: msbuild scg3_vc11.vcxproj /p:configuration=release /p:platform=x64
+  #- ps: dir
   
 # We don't have any tests for the scg3 library
 test: off
