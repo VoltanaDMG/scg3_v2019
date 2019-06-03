@@ -14,5 +14,10 @@ pull_requests:
   # Do not increment build number for pull requests
   do_not_increment_build_number: true
   
+build_script:
+  - ps: cd scg3
+  - ps: msbuild scg3_vc11.vcxproj /p:configuration=release /p:platform=Win64
+  - ps: dir
+  
 # We don't have any tests for the scg3 library
 test: off
