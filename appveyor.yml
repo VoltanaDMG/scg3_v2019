@@ -16,16 +16,14 @@ pull_requests:
 
 before_build:
   # Some useful debug information
-  - cd C:\Windows\System32
-  - dir /s *opengl*
-  - cd C:\Windows\SysWOW64
-  - dir /s *opengl*
-  - cd C:\projects\scg3_v20190
+  - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\${env:username}\Downloads\sdksetup.exe')
+  - cd C:\Users\appveyor\Downloads
+  - dir
 
 build_script:
   #- ps: cd scg3
   #- ps: msbuild scg3_vc11.vcxproj /p:configuration=Release /p:platform=x64
-  - ps: dir
+  #- ps: dir
   
 # We don't have any tests for the scg3 library
 test: off
