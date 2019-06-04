@@ -18,7 +18,18 @@ before_build:
   # Some useful debug information
   - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\appveyor\Downloads\sdksetup.exe')
   # Execute Windows SDK
-  - ps: Start-Process -NoNewWindow -FilePath "C:\Users\appveyor\Downloads\sdksetup.exe" -ArgumentList "/q EULA=1"
+  - ps: |
+      $pinfo = New-Object System.Diagnostics.ProcessStartInfo
+      $pinfo.FileName = "C:\Users\appveyor\Downloads\sdksetup.exe"
+      $pinfo.RedirectStandardError = $true
+      $pinfo.RedirectStandardOutput = $true
+      $pinfo.UseShellExecute = $false
+      $pinfo.Arguments = "/q EULA=1"
+      $p = New-Object System.Diagnostics.Process
+      $p.StartInfo = $pinfo
+      $p.Start() | Out-Null
+      $p.WaitForExit()
+      $p.ExitCode
 
 build_script:
   # - ps: cd scg3
