@@ -15,13 +15,15 @@ pull_requests:
   do_not_increment_build_number: true
 
 before_build:
-  # Some useful debug information
-  - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\appveyor\Downloads\sdksetup.exe')
+  # Donwloading Windows SDK 1809, as ISO format for offline installation
+  - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033686', 'C:\Users\appveyor\Downloads\winsdk.iso')
+  # Unpack ISO (Windows SDK 1809)
+  - mkdir C:\Users\appveyor\Downloads\WinSDK
+  - ps: Invoke-Expression "& `"7z`" x C:\Users\appveyor\Downloads\winsdk.iso -y -oC:\Users\${env:UserName}\Downloads\WinSDK"
   # Execute Windows SDK
   - ps: |
-      $process = start-process C:\Users\appveyor\Downloads\sdksetup.exe -windowstyle Hidden -ArgumentList "/q EULA=1" -PassThru -Wait
+      $process = start-process C:\Users\appveyor\Downloads\WinSDK\WinSDKSetup.exe -windowstyle Hidden -ArgumentList "/features + /q" -PassThru -Wait
       $process.ExitCode
-  - C:\Users\appveyor\Downloads\sdksetup.exe /?
 
 build_script:
   # - ps: cd scg3
