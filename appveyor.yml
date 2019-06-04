@@ -24,11 +24,16 @@ before_build:
   - ps: |
       $process = start-process C:\Users\appveyor\Downloads\WinSDK\WinSDKSetup.exe -windowstyle Hidden -ArgumentList "/features + /q" -PassThru -Wait
       $process.ExitCode
+  # Search for opengl in different folders
+  - cd C:\Windows\system32
+  - dir /s *opengl*
+  - cd C:\Windows\SysWOW64
+  - dir /s *opengl*
 
 build_script:
-  # - ps: cd scg3
-  # - ps: msbuild scg3_vc11.vcxproj /p:configuration=Release /p:platform=x64
-  # - ps: dir
+  - ps: cd scg3
+  - ps: msbuild scg3_vc11.vcxproj /p:configuration=Release /p:platform=x64
+  - ps: dir
   
 # We don't have any tests for the scg3 library
 test: off
