@@ -16,7 +16,7 @@ pull_requests:
 
 before_build:
   # Some useful debug information
-  - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\${env:username}\Downloads\sdksetup.exe')
+  - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\appveyor\Downloads\sdksetup.exe')
   - cd C:\Users\appveyor\Downloads
   - dir
 
