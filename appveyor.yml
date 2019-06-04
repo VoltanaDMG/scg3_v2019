@@ -17,13 +17,14 @@ pull_requests:
 before_build:
   # Some useful debug information
   - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\appveyor\Downloads\sdksetup.exe')
-  - cd C:\Users\appveyor\Downloads
-  - dir
+  - ps: cd C:\Users\appveyor\Downloads
+  - ps: dir
+  - ps: sdksetup.exe /q /EULA=1
 
 build_script:
-  #- ps: cd scg3
-  #- ps: msbuild scg3_vc11.vcxproj /p:configuration=Release /p:platform=x64
-  #- ps: dir
+  # - ps: cd scg3
+  # - ps: msbuild scg3_vc11.vcxproj /p:configuration=Release /p:platform=x64
+  # - ps: dir
   
 # We don't have any tests for the scg3 library
 test: off
