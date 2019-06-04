@@ -6,6 +6,9 @@ image:
   - Visual Studio 2017
 
 install:
+  # Prerequisites (Win32 | x64)
+  - ps: New-Item -path "includes\Win32" -type directory
+  - ps: New-Item -path "includes\x64" -type directory
   # Download/Install OpenGL & GLFW
   - "git clone --depth 1 git://github.com/VoltanaDMG/gl-ci-helpers.git"
   - "powershell gl-ci-helpers/appveyor/install_opengl.ps1"
