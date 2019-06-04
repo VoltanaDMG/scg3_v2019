@@ -19,7 +19,7 @@ before_build:
   - ps: (New-Object Net.WebClient).DownloadFile('https://go.microsoft.com/fwlink/p/?LinkID=2033908', 'C:\Users\appveyor\Downloads\sdksetup.exe')
   - ps: cd C:\Users\appveyor\Downloads
   - ps: dir
-  - ps: & 'sdksetup.exe' /q /EULA=1
+  - sdksetup.exe /q /EULA=1
 
 build_script:
   # - ps: cd scg3
