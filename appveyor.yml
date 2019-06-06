@@ -37,5 +37,5 @@ build_script:
 test: off
 
 artifacts:
-  - path: scg3\x64\releases
+  - path: scg3\x64
     name: scg3_libx64
