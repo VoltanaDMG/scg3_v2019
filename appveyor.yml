@@ -35,3 +35,7 @@ build_script:
   
 # We don't have any tests for the scg3 library
 test: off
+
+artifacts:
+  - path: scg3\x64\releases
+    name: scg3_libx64
