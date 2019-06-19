@@ -1,1 +1,21 @@
-# Coming Soon
+# (WIP) Work In Progress
+sudo: required
+
+dist: xenial
+
+os:
+  - linux
+
+language: python
+
+before_install:
+  # configure a headless display
+  - git clone --depth 1 git://github.com/VoltanaDMG/gl-ci-helpers.git
+  - source ./gl-ci-helpers/travis/setup_headless_display.sh
+  
+install:
+  # Compile & install `scg3` library with CMake
+  - mkdir build
+  - cd build
+  - cmake -DCMAKE_INSTALL_PREFIX=../build-output ..
+  - make install -j2 # replace 2 with CPU core count
