@@ -12,6 +12,8 @@ before_install:
   # configure a headless display
   - git clone --depth 1 git://github.com/VoltanaDMG/gl-ci-helpers.git
   - source ./gl-ci-helpers/travis/setup_headless_display.sh
+  # Install xrandr
+  - sudo apt install xrandr -y
   
 install:
   # Compile & install `scg3` library with CMake
