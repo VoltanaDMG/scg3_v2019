@@ -22,6 +22,7 @@ _(C) 2014-2019 Volker Ahlers_
 * [Building scg3](#building-scg3)
   * [Projects](#projects)
   * [Building using CMake on Linux](#building-using-cmake-on-linux)
+  * [Building using Visual Studio on Windows](#building-using-visual-studio-on-windows)
 * [Release types](#release-types)
 
 <br>
@@ -72,6 +73,12 @@ $ make install -j8   # replace 8 with CPU core count
 
 In case you want to install the `scg3` library globally into your system, use `cmake -DCMAKE_INSTALL_PREFIX=/usr ..` and `sudo make install -jX` instead.
 Uninstallation can be done using `sudo make uninstall`.
+
+#### Building using Visual Studio on Windows
+
+This project contains Visual Studio project files to build the project from the command line with `msbuild` or import it into IDEs like Visual Studio.
+
+To build this library successfully the Windows 10 SDK and at least the MSBuild Tools (or Visual Studio) need to be installed. This project also requires the library GLFW3 and its header files.
 
 <br>
 
